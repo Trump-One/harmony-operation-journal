@@ -1,17 +1,1 @@
-test_json_and_module_references (test_journal.ProjectTests) ... ok
-test_no_sensitive_artifacts (test_journal.ProjectTests) ... ok
-test_clear_leaves_recording_paused (test_journal.StoreTests) ... ok
-test_database_reopen_keeps_logs (test_journal.StoreTests) ... ok
-test_default_paused (test_journal.StoreTests) ... ok
-test_export_order_does_not_truncate_to_ui (test_journal.StoreTests) ... ok
-test_pause_blocks_late_callbacks_and_resume (test_journal.StoreTests) ... ok
-test_payload_is_bound_not_executable (test_journal.StoreTests) ... ok
-test_retention_is_latest_20000 (test_journal.StoreTests) ... ok
-
-----------------------------------------------------------------------
-Ran 9 tests in 0.102s
-
-OK
-
-ArkTS/resource compilation: BUILD SUCCESSFUL (DevEco 26.0.0.851, SDK 26.0.0.105).
-Signing and device/runtime verification: pending; no device connected.
+0.3: 13 host SQLite and project checks passed. ArkTS debug assembleHap BUILD SUCCESSFUL. Signed update installed and launched on connected phone. Session list, legacy migration and detail screen observed. Cross-app control capture and automatic replay NOT verified or implemented as usable features. No personal logs included.

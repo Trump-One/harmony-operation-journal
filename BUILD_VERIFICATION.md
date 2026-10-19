@@ -1,7 +1,9 @@
-# 编译验证
+# 编译验证 · 0.3
 
-2026-10-19：在 macOS ARM64 上使用华为官方 DevEco Studio 26.0.0.851、自带 HarmonyOS SDK 26.0.0.105（API 26）及 Hvigor OHOS Plugin 6.26.8，执行 entry 模块 debug assembleHap。
+华为官方 DevEco Studio 26.0.0.851，自带 HarmonyOS SDK 26.0.0.105（API26），Hvigor OHOS Plugin 6.26.8，macOS ARM64。
 
-结果：BUILD SUCCESSFUL，ArkTS 编译与资源打包通过，生成 entry-default-unsigned.hap。未配置 signingConfig，尚未连接测试手机，未安装或验证运行行为。
+entry模块debug assembleHap：BUILD SUCCESSFUL。ArkTS、资源打包和本机签名通过，签名包已保留数据升级到用户手机。签名配置、口令、证书和设备标识未包含在公开源码中。
 
-构建存在警告：数据库/文件 API 异常提示（异步调用由上层处理）、旧版 UI/坐标接口废弃提示、app_name 重复声明和模块版本提示。编译成功不代表真机能力或后台可靠性已验证。
+存在旧无障碍接口废弃提示及API异常处理提示等编译警告。没有将废弃接口替换为系统专用API。编译、签名和安装成功不证明跨应用事件、截图及自动操作可用，实际结果见DEVICE_TESTS.md。
+
+本机数据库/资源检查：13项通过，覆盖实际SQL门禁、数据保留、记录分组、空记录、旧数据迁移和重启结束等。当前无自动复现执行器；不能使用此版本重做其他软件中的操作。
