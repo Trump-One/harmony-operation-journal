@@ -1,10 +1,12 @@
-> 完整源码以 [harmony-operation-journal-source.zip](harmony-operation-journal-source.zip) 提供。下载并解压后，在 DevEco Studio 打开其中的 `harmony-operation-journal` 目录。当前是未经鸿蒙编译与真机验证的源码原型，不是安装包。
+> 完整源码以 [harmony-operation-journal-source.zip](harmony-operation-journal-source.zip) 提供。下载解压后用 DevEco Studio 打开。源码已编译成功，但未完成签名和真机测试；未签名 HAP 不能直接安装。
 
 # 操作手记 · HarmonyOS Operation Journal
 
 用于个人手机的透明、本地事件记录实验应用。用户目标设备：Mate 80 Pro Max / 鸿蒙 7（用户提供）；工程基线：HarmonyOS 5.0 / API 12，ArkTS + ArkUI。
 
-**状态：源码原型，未编译、未签名、未在鸿蒙 7 真机验证。不是“全手机全部操作记录器”。本仓库不提供可安装 HAP。**
+**状态：源码原型，已在 DevEco Studio 26.0.0.851 / HarmonyOS SDK 26.0.0.105 编译成功，生成未签名 HAP；尚未签名、安装或在鸿蒙 7 真机验证。不是“全手机全部操作记录器”。未签名 HAP 不能直接安装。**
+
+构建环境和限制见 [编译验证记录](BUILD_VERIFICATION.md)。
 
 ## 已编写的功能
 
@@ -32,14 +34,14 @@
 
 ## 在 DevEco Studio 运行
 
-1. 安装华为官方 DevEco Studio 及支持 API 12 的 HarmonyOS SDK；本仓库工具配置为 Hvigor 5.0.0。当前 IDE 若要求升级，使用 IDE 的工程升级并按已安装 SDK 调整 `build-profile.json5` 中版本。
+1. 安装华为官方 DevEco Studio 及支持 API 12 的 HarmonyOS SDK；工程 modelVersion 为 5.0.0，已使用 DevEco Studio 26.0.0.851 自带的 Hvigor 6.26.8 编译。当前 IDE 若要求升级，使用 IDE 的工程升级并按已安装 SDK 调整 `build-profile.json5` 中版本。
 2. 直接打开仓库根目录，同步 Hvigor / OHPM 依赖。仓库没有附带下载型 wrapper 或签名材料；使用 IDE 内置工具。
 3. 配置你自己的 bundleName 和开发者签名，在 **Project Structure → Signing Configs** 使用自动签名，选择已连接的手机。不要提交 IDE 生成的证书、profile、私钥或含本机路径的配置。
 4. 连接已开启开发者模式和调试的测试手机，运行 `entry`。不需要网络权限。
 5. 点击“开始记录”，点击测试按钮，检查应用内坐标和按钮事件；下拉控制中心切换手电筒、锁屏再亮屏，返回核对实际日志与注册状态。收不到的事件应作为兼容性缺口记录。
 6. 暂停后继续操作，核对不增加日志；导出 JSON/CSV，检查时间、来源、数量；清空后重启确认为空且暂停。
 
-本机没有 DevEco / HarmonyOS SDK / HDC，因此以上 **尚待真机执行**。后台保活没有伪装成音频或定位任务，没有加入无限后台服务。
+开发工具和 SDK 已安装，ArkTS 编译已通过；以上手机操作 **尚待签名及真机执行**。后台保活没有伪装成音频或定位任务，没有加入无限后台服务。
 
 ## 验证
 

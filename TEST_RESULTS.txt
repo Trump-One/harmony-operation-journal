@@ -9,8 +9,9 @@ test_payload_is_bound_not_executable (test_journal.StoreTests) ... ok
 test_retention_is_latest_20000 (test_journal.StoreTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.076s
+Ran 9 tests in 0.102s
 
 OK
 
-Limit: SQLite and project structure checks only. No ArkTS compiler, SDK, signing or device test available.
+ArkTS/resource compilation: BUILD SUCCESSFUL (DevEco 26.0.0.851, SDK 26.0.0.105).
+Signing and device/runtime verification: pending; no device connected.
