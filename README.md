@@ -49,7 +49,7 @@ python3 -m unittest discover -s tests -v
 
 测试从 ArkTS 源码提取 SQL，在 SQLite 中验证暂停门禁、迟到事件、保留上限、排序/导出集合以及数据库重开，并验证资源和 manifest 引用。它们**不替代 ArkTS 编译、API 类型检查或设备兼容性测试**。
 
-见 [验收清单](docs/DEVICE_TESTS.md) 和 [隐私说明](PRIVACY.md)。
+见 [验收清单](DEVICE_TESTS.md) 和 [隐私说明](PRIVACY.md)。
 
 ## 官方接口依据
 
